@@ -132,5 +132,5 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ALLOWED_HOSTS = [
-    "web-production-f136.up.railway.app",
+    "https://web-production-f136.up.railway.app",
 ]
