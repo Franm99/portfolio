@@ -136,9 +136,9 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ALLOWED_HOSTS = [
-    "web-production-f136.up.railway.app", "127.0.0.1"
+    "fran-moreno.up.railway.app", "127.0.0.1"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-f136.up.railway.app',
+    'https://fran-moreno.up.railway.app',
 ]
