@@ -1,0 +1,100 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<section id="welcome" class="d-flex flex-column justify-content-center">
+  <div class="col-md-6 py-5 p-5" style="background-color: white">
+    <h1 class="py-2">Francisco Moreno</h1>
+    <p>Software Engineer</p>
+  </div>
+</section>
+
+<section id="skills" class="row py-3 justify-content-center">
+  <div class="col-md-8">
+    <ul
+      class="list-inline list-group-custom justify-content-center align-content-center"
+    >
+      {% for skill in skills %}
+      <li class="mx-3">
+        <img
+          class="grow-big"
+          src="{{skill.logo.url}}"
+          width="50"
+          height="50"
+        />
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<div class="container container-fluid">
+  <div class="row justify-content-center p-4">
+    <h2 class="section-title">About me</h2>
+      <div id="quote-section" class="col-9 d-grid align-content-center px-0 rounded-start-5">
+          <div class="px-5">
+              <p class="text-end">
+                  I'm an inquiring and curious person, with a great passion for the things I love. I started to learn about software during my Bachelor's in Robotics Engineering in the University of Málaga. It wasn't until the last year, thanks to a good friend, that I found understood how interesting, beautiful and complex it can be though. From that point, I knew that my carrer would take a turn towards the amusing world of programming.
+              </p>
+              <p class="text-end">
+                  Having the opportunity to bring virtually any idea to life through code is something that not only helps to make life easier, but also to keep your head busy, and understand how things work, by finding the key concepts of it.
+              </p>
+              <p class="text-end">
+                  As you may notice from this introduction, this portfolio is a place in where I would like to unleash my imagination, talk about things I find interesting, and maybe one day to help other people to learn how coding can be introduced to their daily lives.
+              </p>
+          </div>
+      </div>
+      <div class="col-3 d-grid justify-content-center align-content-center px-0">
+          <img class="rounded-end-5" src="/media/portfolio/images/me.jpg" style="width: 100%;">
+      </div>
+  </div>
+
+<div class="container">
+  <div class="row my-4 justify-content-center">
+    <h2 class="section-title">Projects</h2>
+  
+    {% for project in projects %}
+  
+    <div class="col-md-4 p-4">
+      <div class="card grow-small card-project">
+        <img
+          class="card-img-top"
+          style="width: 100%; height: 20vw; object-fit: cover"
+          src="{{project.image.url}}"
+          alt="{{project.title}}"
+        />
+  
+        <div class="card-header card-header-custom">
+            {{project.title}}
+        </div>
+
+        <div class="card-body">
+          <ul class="list-inline list-group-custom justify-content-center align-content-center">
+            {% for skill in project.skills.all %}
+            
+            <li class="mx-2">
+              <img src="{{ skill.logo.url }}" width='20' height='20' />
+            </li>
+            
+            {% endfor %}
+          </ul>
+  
+          {% if project.url %}
+  
+          <a
+            href="{{project.url}}"
+            class="btn btn-light rounded-0 btn-sm"
+            target="_blank" >
+              <span class="material-symbols-outlined">
+                open_in_new
+              </span>
+          </a>
+  
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

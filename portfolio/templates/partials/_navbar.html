@@ -1,0 +1,33 @@
+{% load static %}
+
+<header id="header">
+  <div>
+    <nav id="navbar" class="nav-menu navbar align-content-center navbar-custom">
+      <!-- todo: id not working, transition never happens. -->
+      <a
+        id="brand-icon"  
+        class="navbar-brand px-5"
+        href="/"
+        >F. M.</a
+      >
+
+      <div class="justify-content-end align-content-center mx-5">
+        <ul class="list-inline navbar-items mb-0 align-content-center">
+          <li class="nav-link mx-2 grow-small"><a class="nav-link" href="{% url 'portfolio:home' %}">Home</a></li>
+          <li class="nav-link mx-2 grow-small"><a class="nav-link" href="{% url 'portfolio:about' %}">About</a></li>
+          <li class="nav-link mx-2 grow-small"><a class="nav-link" href="{% url 'portfolio:projects' %}">Projects</a></li>
+          <li class="nav-link mx-2 grow-small"><a class="nav-link" href="{% url 'portfolio:contact' %}">Contact</a></li>
+          <li class="nav-link mx-2">
+            <a
+              id="cv-button"
+              class="btn btn-primary btn-sm d-flex"
+              href="{% static 'portfolio/cv.pdf' %}"
+              target="_blank"
+              >Download CV</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

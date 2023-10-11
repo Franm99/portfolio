@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<br><br><br>
+
+{% for project in projects %}
+
+<div class="px-5 py-3">
+    <div class="card card-body card-body-custom" onclick="window.open('{{project.url}}')">
+        
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <img src="{{project.image.url}}" class="img-fluid rounded-2">
+            </div>
+
+            <div class="col-lg-9 col-12">
+                <h2 class="project-title">{{project.title}}</h2>
+                <p class="m-2">{{project.description}}</p>
+
+                <div class="row my-3">
+                    <div class="col-6 align-content-center">
+                        <h4 class="project-title">Skills/Technologies:</h4>
+                    </div>
+                    <div class="col-6 align-content-center justify-content-center">
+                        <ul class="list-inline list-group-custom align-content-center m-2">
+                            {% for skill in project.skills.all %}
+        
+                            <li class="mx-2">
+                                <img src="{{skill.logo.url}}" width="36" height="36">
+                            </li>
+        
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
